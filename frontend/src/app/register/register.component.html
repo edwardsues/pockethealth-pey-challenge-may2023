@@ -1,0 +1,35 @@
+<div>
+  <!-- Header -->
+  <div class="modal-header modal-logo-header">
+    <img src="assets/logos/ph-logo.svg" alt="" class="ph-logo">
+  </div>
+
+  <!-- Content -->
+  <div class="form-container">
+    <form (ngSubmit)="onFormSubmit(form)" #form="ngForm" #registerForm="ngForm" ngNativeValidate >
+      <!-- Input Fields -->
+      <div class="input-row">
+        <label for="name">Name</label>
+        <input ngModel type="text" name="name" class="input-field" placeholder="Name" #name="ngModel" [autofocus] ngModel="" required>
+        <div *ngIf="name.invalid && name.dirty" style="color: red; font: smaller;">Name is required</div>
+      </div>
+        
+      <div class="input-row">
+        <label for="email">Email</label>
+        <input ngModel type="email" name="email" class="input-field" placeholder="Email" required ngModel email #email="ngModel" [ngModelOptions]="{ updateOn: 'blur' }">
+        <div *ngIf="email.dirty && email.errors?.required" style="color: red; font: smaller;">Email is required</div>
+        <div *ngIf="email.dirty && !email.errors?.required && email.errors?.email" style="color: red; font: smaller;">Enter a valid email</div>
+      </div>
+      <div class="input-row">
+        <label for="favcolour">Favourite Colour</label>
+        <input ngModel type="text" name="favcolour" class="input-field" placeholder="(optional)">
+      </div>
+      <!-- Button -->
+      <div class="button-row">
+        <button class="btn primary-btn" type="submit" [disabled]="!form.form.valid">
+          Register
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
