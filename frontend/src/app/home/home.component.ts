@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
 
 
@@ -21,15 +19,16 @@ export class HomeComponent implements OnInit {
     private userService: UserService,
   ) { }
 
-  // ngOnInit(): void { }
+  ngOnInit(): void { }
 
-  ngOnInit() {
+  // ngOnInit() {
 
-    console.log(this.cur_user_info)
-    // make sure that the page doesn't print an empty string for favourite colour (this is from when i had the user enter their favourite colour in a text box)
-    // if (this.current_favcolour == ""){
-    //   this.current_favcolour = "(not specified)"
-    // }
-  }
+  //   // console.log(this.cur_user_info)
+
+  //   // make sure that the page doesn't print an empty string for favourite colour (this is from when i had the user enter their favourite colour in a text box)
+  //   // if (this.current_favcolour == ""){
+  //   //   this.current_favcolour = "(not specified)"
+  //   // }
+  // }
 
 }

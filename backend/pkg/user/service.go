@@ -14,7 +14,7 @@ func NewUserApiService() UserApiService {
 	return UserApiService{}
 }
 
-// PostRegister - Register a User
+// PostRegister - Register a User, updated for task 5
 func (s UserApiService) PostRegister(ctx context.Context, name string, email string, favColour string) (string, error) {
 	// save user to datastore
 	userId, err := datastore.CreateUser(ctx, name, email, favColour)
@@ -23,7 +23,7 @@ func (s UserApiService) PostRegister(ctx context.Context, name string, email str
 		return "", err
 	}
 	log.Printf("created user with id: %s\n", userId)
-	log.Printf("user fav colour is %s", favColour)
+	// log.Printf("user fav colour is %s", favColour)
 
 	// return the user id
 	return userId, err

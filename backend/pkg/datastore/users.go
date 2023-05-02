@@ -10,9 +10,10 @@ import (
 var userStore = make(map[string]User)
 
 type User struct {
-	Id        string
-	Name      string
-	Email     string
+	Id    string
+	Name  string
+	Email string
+	// task 5
 	FavColour string
 }
 
@@ -20,9 +21,10 @@ func CreateUser(ctx context.Context, name string, email string, favColour string
 	id := uuid.New().String()
 	// save the user
 	userStore[id] = User{
-		Id:        id,
-		Name:      name,
-		Email:     email,
+		Id:    id,
+		Name:  name,
+		Email: email,
+		// task 5
 		FavColour: favColour,
 	}
 

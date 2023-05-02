@@ -13,6 +13,8 @@ export class RegisterComponent implements OnInit {
     private userService: UserService,
     private router: Router,
   ) { }
+  // task 5
+  // obtaining the selection of the favourite colour, default value of Red
   favColour = 'Red';
   onSelected(value:string) : void {
     this.favColour = value;
@@ -24,7 +26,6 @@ export class RegisterComponent implements OnInit {
     const name = form.value.name;
     const email = form.value.email;
 
-    
     this.userService.postRegister(name, email, this.favColour).subscribe((data) => {
       // console.log(data)
       // console.log(this.favColour)

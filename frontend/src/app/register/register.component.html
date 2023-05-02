@@ -11,20 +11,25 @@
       <div class="input-row">
         <label for="name">Name</label>
         <input ngModel type="text" name="name" class="input-field" placeholder="Name" #name="ngModel" [autofocus] ngModel="" required>
+        <!-- Task 7: input validation -->
         <div *ngIf="name.invalid && name.dirty" style="color: red; font: smaller;">Name is required</div>
       </div>
         
       <div class="input-row">
         <label for="email">Email</label>
         <input ngModel type="email" name="email" class="input-field" placeholder="Email" required ngModel email #email="ngModel" [ngModelOptions]="{ updateOn: 'blur' }">
+        <!-- Task 7: input validation -->
         <div *ngIf="email.dirty && email.errors?.required" style="color: red; font: smaller;">Email is required</div>
         <div *ngIf="email.dirty && !email.errors?.required && email.errors?.email" style="color: red; font: smaller;">Enter a valid email</div>
       </div>
       <div class="input-row">
         <label for="favcolour">Favourite Colour</label>
+        <!-- Task 5: -->
         <!-- previously I had the user enter what their favourite colour was and then simply display the text in the home screen, I'm not sure which one is better
         but the new version lets the user select from a preset list of colours -->
         <!-- <input ngModel type="text" name="favcolour" class="input-field" placeholder="(optional)"> -->
+          
+        <!-- colour dropdown -->
         <select name="favcolour" id="favcolour" #favcolour (change)="onSelected(favcolour.value)" style="width: 420px; height: 40px; padding: 11px; background-color: white; border: 1px solid grey; border-radius: 4px; color: rgb(134, 134, 134); font-size: 14px;">
           <option value="Red">Red</option>
           <option value="Orange">Orange</option>
