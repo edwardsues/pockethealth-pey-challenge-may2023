@@ -22,7 +22,20 @@
       </div>
       <div class="input-row">
         <label for="favcolour">Favourite Colour</label>
-        <input ngModel type="text" name="favcolour" class="input-field" placeholder="(optional)">
+        <!-- previously I had the user enter what their favourite colour was and then simply display the text in the home screen, I'm not sure which one is better
+        but the new version lets the user select from a preset list of colours -->
+        <!-- <input ngModel type="text" name="favcolour" class="input-field" placeholder="(optional)"> -->
+        <select name="favcolour" id="favcolour" #favcolour (change)="onSelected(favcolour.value)" style="width: 420px; height: 40px; padding: 11px; background-color: white; border: 1px solid grey; border-radius: 4px; color: rgb(134, 134, 134); font-size: 14px;">
+          <option value="Red">Red</option>
+          <option value="Orange">Orange</option>
+          <option value="Yellow">Yellow</option>
+          <option value="Green">Green</option>
+          <option value="blue">Blue</option>
+          <option value="Purple">Purple</option>
+          <option value="Pink">Pink</option>
+          <option value="Black">Black</option>
+          <option value="White">White</option>
+        </select>
       </div>
       <!-- Button -->
       <div class="button-row">

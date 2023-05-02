@@ -23,7 +23,7 @@ func (s UserApiService) PostRegister(ctx context.Context, name string, email str
 		return "", err
 	}
 	log.Printf("created user with id: %s\n", userId)
-	// log.Printf("user fav colour is %s", favColour)
+	log.Printf("user fav colour is %s", favColour)
 
 	// return the user id
 	return userId, err

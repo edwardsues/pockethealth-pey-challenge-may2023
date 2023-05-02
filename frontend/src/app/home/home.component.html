@@ -7,7 +7,11 @@
     <!-- Content -->
     <div class="form-container">
         <div style="text-align: center; width: 500px;">
-            <p> Welcome to PocketHealth {{current_name}}, <br> Your User ID is: {{current_userID}}, <br> Your Favourite Colour is: {{current_favcolour}}</p>
+            <p> Welcome to PocketHealth {{current_name}}, 
+                <br> Your User ID is: {{current_userID}}, 
+                <br> Your Favourite Colour is:
+                <span style="display:inline-block; position:relative; top: 3px; height: 15px; width: 15px; border: 1px solid black; background-color: {{ current_favcolour }} "></span>
+            </p>
         </div>
        
     </div>

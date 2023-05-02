@@ -13,17 +13,21 @@ export class RegisterComponent implements OnInit {
     private userService: UserService,
     private router: Router,
   ) { }
+  favColour = 'Red';
+  onSelected(value:string) : void {
+    this.favColour = value;
+  }
 
   ngOnInit(): void { }
 
   onFormSubmit(form: NgForm) {
     const name = form.value.name;
     const email = form.value.email;
-    const favColour = form.value.favcolour;
 
     
-    this.userService.postRegister(name, email, favColour).subscribe((data) => {
+    this.userService.postRegister(name, email, this.favColour).subscribe((data) => {
       // console.log(data)
+      // console.log(this.favColour)
       // Once we've received a response, take the user to the home page
       this.router.navigateByUrl('/home');
     })
